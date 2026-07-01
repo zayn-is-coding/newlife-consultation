@@ -106,7 +106,7 @@ export default function Services() {
               <p className="font-body text-lg text-gray-600 mb-8 max-w-lg">
                 Everything you need to fix your credit, manage your debt, and build a stronger financial future.
               </p>
-              <Button href="#credit-analysis" variant="primary" size="lg">Explore Services</Button>
+              <Button className="max-sm:w-full" href="#credit-analysis" variant="primary" size="lg">Explore Services</Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden aspect-3/4 bg-gray-100">
@@ -286,8 +286,8 @@ export default function Services() {
 
       {/* 6b. Large Image Break */}
       <section className="relative py-32 sm:py-40 px-4 min-h-screen flex items-center justify-start overflow-hidden">
-        <div className="absolute inset-0">
-          <Parallax intensity={-300}>
+        <div className="absolute inset-0 flex flex-col">
+          <Parallax intensity={-300} className="flex-1">
             <img src="/images/services/helena-lopes-PGnqT0rXWLs-unsplash.jpg" alt="" className="w-full h-[120%] object-cover" />
           </Parallax>
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
@@ -301,12 +301,12 @@ export default function Services() {
               Every month you wait is another month of high interest rates, denied applications, and missed opportunities. Let&apos;s change that today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-body font-semibold rounded-xl hover:bg-primary/90 transition-colors duration-300">
+              <Button href="/contact" className="max-sm:w-full" variant="primary">
                 Book Free Consultation
-              </a>
-              <a href="/pricing" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-body font-semibold rounded-xl hover:bg-white/10 transition-colors duration-300">
+              </Button>
+              <Button href="/pricing" className="max-sm:w-full" variant="outline">
                 View Pricing
-              </a>
+              </Button>
             </div>
           </div>
         </div>
