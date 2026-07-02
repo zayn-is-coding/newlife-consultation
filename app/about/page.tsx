@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Learn about New Life Consulting. We help everyday people take control of their credit.",
     url: "https://www.newlifeconsulting.com/about",
-    images: [{ url: "/api/og", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=About%20Us&subtitle=Learn%20about%20New%20Life%20Consulting", width: 1200, height: 630 }],
   },
 };
 

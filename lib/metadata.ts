@@ -17,10 +17,13 @@ export function createMetadata({
   title,
   description,
   path = "",
-  ogImage = DEFAULT_OG_IMAGE,
+  ogImage,
   noindex = false,
 }: PageMetadata): Metadata {
   const url = `${SITE_URL}${path}`;
+  const ogImageUrl = ogImage
+    ? `${SITE_URL}${ogImage}`
+    : `${SITE_URL}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}`;
 
   return {
     title,
@@ -35,7 +38,7 @@ export function createMetadata({
       siteName: SITE_NAME,
       images: [
         {
-          url: `${SITE_URL}${ogImage}`,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -49,7 +52,7 @@ export function createMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${SITE_URL}${ogImage}`],
+      images: [ogImageUrl],
     },
     robots: noindex
       ? { index: false, follow: false }

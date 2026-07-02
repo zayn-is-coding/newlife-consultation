@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "Expert credit consulting for everyday people. Credit repair, financial planning, debt management, and more.",
     url: "https://www.newlifeconsulting.com",
-    images: [{ url: "/api/og", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=New%20Life%20Consulting&subtitle=Credit%20Consulting%20for%20Everyday%20People", width: 1200, height: 630 }],
   },
 };
 

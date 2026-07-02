@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
       "Transparent pricing for credit consulting services. Choose the plan that fits your needs.",
     url: "https://www.newlifeconsulting.com/pricing",
-    images: [{ url: "/api/og", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=Pricing&subtitle=Transparent%20Pricing%20for%20Credit%20Consulting", width: 1200, height: 630 }],
   },
 };
 
