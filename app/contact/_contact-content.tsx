@@ -23,6 +23,7 @@ interface FormData {
   service: string;
   message: string;
   plan: string;
+  type: string;
 }
 
 interface FormErrors {
@@ -46,8 +47,9 @@ const SERVICES = [
   { value: "other", label: "Not sure yet" },
 ];
 
-const PLAN_CONFIG: Record<string, { service: string; heading: string; subheading: string; planName: string; price: string; period: string; features: string[]; dropdownLabel: string; defaultMessage: string; badge?: string }> = {
+const PLAN_CONFIG: Record<string, { type: "plan" | "service" | "consultation"; service: string; heading: string; subheading: string; planName: string; price: string; period: string; features: string[]; dropdownLabel: string; defaultMessage: string; badge?: string }> = {
   assessment: {
+    type: "plan",
     service: "credit-analysis",
     heading: "Get Started with Credit Assessment",
     subheading: "A one-time deep dive into your credit report from all three bureaus.",
@@ -64,6 +66,7 @@ const PLAN_CONFIG: Record<string, { service: string; heading: string; subheading
     defaultMessage: "Hi, I'm interested in the Credit Assessment plan ($99). I'd like to schedule my credit report review and consultation call. Please reach out to get started.",
   },
   repair: {
+    type: "plan",
     service: "credit-repair",
     heading: "Get Started with Credit Repair",
     subheading: "Ongoing support to dispute errors and boost your score.",
@@ -82,6 +85,7 @@ const PLAN_CONFIG: Record<string, { service: string; heading: string; subheading
     defaultMessage: "Hi, I'm interested in the Credit Repair Program ($299/mo). I'd like to start the dispute process and work on improving my credit score. Please reach out to get started.",
   },
   freedom: {
+    type: "plan",
     service: "financial-planning",
     heading: "Get Started with Financial Freedom",
     subheading: "Complete transformation with planning, budgeting, and wealth building.",
@@ -99,6 +103,7 @@ const PLAN_CONFIG: Record<string, { service: string; heading: string; subheading
     defaultMessage: "Hi, I'm interested in the Financial Freedom plan ($499). I'd like to get started with financial planning, budgeting, and debt management. Please reach out to discuss next steps.",
   },
   consultation: {
+    type: "consultation",
     service: "",
     heading: "Book Your Free Consultation",
     subheading: "No pressure, no sales pitch. Just an honest conversation about your credit.",
@@ -110,71 +115,76 @@ const PLAN_CONFIG: Record<string, { service: string; heading: string; subheading
     defaultMessage: "",
   },
   "credit-analysis": {
+    type: "service",
     service: "credit-analysis",
-    heading: "Get Started with Credit Score Analysis",
+    heading: "Inquire about Credit Score Analysis",
     subheading: "Full breakdown of your credit report from all three bureaus.",
-    planName: "Credit Score Analysis",
-    price: "$99",
-    period: "one-time",
-    features: ["Tri-bureau report review", "Score factor analysis", "Personalized action plan"],
-    dropdownLabel: "Credit Score Analysis ($99)",
-    defaultMessage: "Hi, I'm interested in the Credit Score Analysis ($99). I'd like a full breakdown of my credit report from all three bureaus. Please reach out to get started.",
+    planName: "",
+    price: "",
+    period: "",
+    features: [],
+    dropdownLabel: "",
+    defaultMessage: "Hi, I'd like to learn more about the Credit Score Analysis service. Could you walk me through what's included and how to get started?",
   },
   "credit-repair": {
+    type: "service",
     service: "credit-repair",
-    heading: "Get Started with Credit Repair",
+    heading: "Inquire about Credit Repair",
     subheading: "We handle the entire dispute process with all three bureaus.",
-    planName: "Credit Repair",
-    price: "$299",
-    period: "/mo",
-    badge: "Most Popular",
-    features: ["Bureau disputes", "Monthly progress reports", "Creditor negotiations"],
-    dropdownLabel: "Credit Repair ($299/mo)",
-    defaultMessage: "Hi, I'm interested in the Credit Repair plan ($299/mo). I'd like to start the dispute process with all three bureaus. Please reach out to get started.",
+    planName: "",
+    price: "",
+    period: "",
+    features: [],
+    dropdownLabel: "",
+    defaultMessage: "Hi, I'd like to learn more about the Credit Repair service. Could you walk me through the dispute process and how to get started?",
   },
   "financial-planning": {
+    type: "service",
     service: "financial-planning",
-    heading: "Get Started with Financial Planning",
+    heading: "Inquire about Financial Planning",
     subheading: "Build a real financial plan covering budgeting, saving, and investing.",
-    planName: "Financial Planning",
-    price: "$499",
-    period: "one-time",
-    features: ["Financial planning session", "Debt management", "Financial literacy sessions"],
-    dropdownLabel: "Financial Planning ($499)",
-    defaultMessage: "Hi, I'm interested in the Financial Planning plan ($499). I'd like to build a financial plan covering budgeting, saving, and investing. Please reach out to get started.",
+    planName: "",
+    price: "",
+    period: "",
+    features: [],
+    dropdownLabel: "",
+    defaultMessage: "Hi, I'd like to learn more about Financial Planning. Could you walk me through what's included and how to get started?",
   },
   "debt-management": {
+    type: "service",
     service: "debt-management",
-    heading: "Get Started with Debt Management",
+    heading: "Inquire about Debt Management",
     subheading: "Stop collection calls. We negotiate to cut balances and build a payoff strategy.",
-    planName: "Debt Management",
-    price: "$499",
-    period: "one-time",
-    features: ["Creditor negotiations", "Consolidation evaluation", "Payment plan structuring"],
-    dropdownLabel: "Debt Management ($499)",
-    defaultMessage: "Hi, I'm interested in the Debt Management plan ($499). I'd like help with creditor negotiations and building a payoff strategy. Please reach out to get started.",
+    planName: "",
+    price: "",
+    period: "",
+    features: [],
+    dropdownLabel: "",
+    defaultMessage: "Hi, I'd like to learn more about Debt Management. Could you walk me through how the negotiation process works and how to get started?",
   },
   "financial-literacy": {
+    type: "service",
     service: "financial-literacy",
-    heading: "Get Started with Financial Literacy",
+    heading: "Inquire about Financial Literacy",
     subheading: "Learn how credit really works with one-on-one sessions and workshops.",
-    planName: "Financial Literacy",
+    planName: "",
     price: "",
     period: "",
-    features: ["One-on-one sessions", "Group workshops available"],
-    dropdownLabel: "Financial Literacy",
-    defaultMessage: "Hi, I'm interested in Financial Literacy. I'd like to learn how credit works through one-on-one sessions or group workshops. Please reach out to get started.",
+    features: [],
+    dropdownLabel: "",
+    defaultMessage: "Hi, I'd like to learn more about Financial Literacy sessions. Could you share what's covered and how to sign up?",
   },
   consulting: {
+    type: "service",
     service: "consulting",
-    heading: "Get Started with Expert Consulting",
+    heading: "Inquire about Expert Consulting",
     subheading: "Direct access to an experienced credit professional for any financial question.",
-    planName: "Expert Consulting",
+    planName: "",
     price: "",
     period: "",
-    features: ["One-on-one sessions (in-person or virtual)", "Mortgage readiness assessment", "Priority scheduling"],
-    dropdownLabel: "Expert Consulting",
-    defaultMessage: "Hi, I'm interested in Expert Consulting. I'd like to schedule a one-on-one session to discuss my financial situation. Please reach out to get started.",
+    features: [],
+    dropdownLabel: "",
+    defaultMessage: "Hi, I'd like to learn more about Expert Consulting. Could you share availability and how to schedule a session?",
   },
 };
 
@@ -258,6 +268,7 @@ export default function Contact() {
     service: planConfig?.service ?? "",
     message: planConfig?.defaultMessage ?? "",
     plan: planParam ?? "",
+    type: planConfig?.type ?? "",
   });
 
   const update = useCallback((field: keyof FormData, value: string) => {
@@ -328,7 +339,7 @@ export default function Contact() {
       toast.success("Message sent successfully!");
       setSubmittedName(form.name.split(" ")[0]);
       setShowSuccess(true);
-      setForm({ name: "", email: "", phone: "", service: "", message: "", plan: "" });
+      setForm({ name: "", email: "", phone: "", service: "", message: "", plan: "", type: "" });
       setErrors({});
       setTouched({});
     } catch {
@@ -452,7 +463,7 @@ export default function Contact() {
 
             {/* Right — Contact Form */}
             <div className="bg-gray-50 rounded-2xl p-8 sm:p-10 border border-gray-100">
-              {planConfig?.planName && (
+              {planConfig?.type === "plan" && planConfig.planName && (
                 <div className="mb-8 p-6 bg-white rounded-xl border border-gray-100">
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -551,15 +562,25 @@ export default function Contact() {
                   <label className="block text-sm font-medium mb-2">
                     What do you need help with? <span className="text-danger">*</span>
                   </label>
-                  {planConfig?.planName && (
-                    <div className="flex items-center gap-2 mb-2 px-3 py-2 bg-primary/5 border border-primary/20 rounded-lg">
-                      <svg className="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {planConfig && planConfig.type !== "consultation" && (
+                    <div className={`flex items-center gap-2 mb-2 px-3 py-2 rounded-lg ${
+                      planConfig.type === "plan"
+                        ? "bg-primary/5 border border-primary/20"
+                        : "bg-gray-100 border border-gray-200"
+                    }`}>
+                      <svg className={`w-4 h-4 shrink-0 ${
+                        planConfig.type === "plan" ? "text-primary" : "text-gray-500"
+                      }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <span className="font-body text-sm font-semibold text-primary">
-                        {planConfig.dropdownLabel}
+                      <span className={`font-body text-sm font-semibold ${
+                        planConfig.type === "plan" ? "text-primary" : "text-gray-600"
+                      }`}>
+                        {planConfig.type === "plan" ? planConfig.dropdownLabel : planConfig.heading.replace("Inquire about ", "")}
                       </span>
-                      <span className="font-body text-xs text-gray-400 ml-auto">Plan selected</span>
+                      <span className="font-body text-xs text-gray-400 ml-auto">
+                        {planConfig.type === "plan" ? "Plan selected" : "Service selected"}
+                      </span>
                     </div>
                   )}
                   <Select

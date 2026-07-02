@@ -29,7 +29,7 @@ const PLAN_LABELS: Record<string, { name: string; price: string }> = {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, service, message, plan } = body;
+    const { name, email, phone, service, message, plan, type } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -48,9 +48,19 @@ export async function POST(req: NextRequest) {
 
     const serviceLabel = SERVICE_LABELS[service] || service || "Not specified";
     const planInfo = plan ? PLAN_LABELS[plan] : null;
-    const subject = planInfo
-      ? `New Plan Inquiry: ${name} — ${planInfo.name} (${planInfo.price})`
-      : `New Contact: ${name} — ${serviceLabel}`;
+
+    let subject: string;
+    let heading: string;
+    if (planInfo && type === "plan") {
+      subject = `New Plan Inquiry: ${name} — ${planInfo.name} (${planInfo.price})`;
+      heading = "New Plan Inquiry";
+    } else if (type === "service") {
+      subject = `New Service Inquiry: ${name} — ${serviceLabel}`;
+      heading = "New Service Inquiry";
+    } else {
+      subject = `New Contact: ${name} — ${serviceLabel}`;
+      heading = "New Contact Form Submission";
+    }
 
     await resend.emails.send({
       from: "New Life Consulting <noreply@newlifeconsulting.com>",
@@ -59,7 +69,7 @@ export async function POST(req: NextRequest) {
       subject,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1e40af; margin-bottom: 8px;">${planInfo ? "New Plan Inquiry" : "New Contact Form Submission"}</h2>
+          <h2 style="color: #1e40af; margin-bottom: 8px;">${heading}</h2>
           <p style="color: #64748b; margin-bottom: 24px;">Submitted via the New Life Consulting website</p>
 
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
@@ -75,7 +85,7 @@ export async function POST(req: NextRequest) {
               <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">Phone</td>
               <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b;">${phone || "Not provided"}</td>
             </tr>
-            ${planInfo ? `
+            ${type === "plan" && planInfo ? `
             <tr>
               <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">Plan</td>
               <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-weight: 600;">${planInfo.name}${planInfo.price ? ` — ${planInfo.price}` : ""}</td>
