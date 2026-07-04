@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import PricingContent from "./_pricing-content";
+import { buildBreadcrumbs, buildFAQSchema } from "@/lib/metadata";
+import { pricingFaqs } from "@/lib/faqs";
 
 const SITE_URL = process.env.SITE_URL || "https://www.newlifeconsulting.com";
 
@@ -16,6 +18,27 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Pricing" },
+]);
+
+const faqSchema = buildFAQSchema(
+  pricingFaqs.map((faq) => ({ question: faq.q, answer: faq.a }))
+);
+
 export default function Page() {
-  return <PricingContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <PricingContent />
+    </>
+  );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicesContent from "./_services-content";
+import { buildBreadcrumbs } from "@/lib/metadata";
 
 const SITE_URL = process.env.SITE_URL || "https://www.newlifeconsulting.com";
 
@@ -16,6 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Services" },
+]);
+
 export default function Page() {
-  return <ServicesContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <ServicesContent />
+    </>
+  );
 }

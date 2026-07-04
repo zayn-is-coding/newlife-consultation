@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Button from "../components/Button";
 import CreditSpeedometer from "../components/CreditSpeedometer";
 import Parallax from "../components/Parallax";
+import { buildBreadcrumbs } from "@/lib/metadata";
 
 const SITE_URL = process.env.SITE_URL || "https://www.newlifeconsulting.com";
 
@@ -18,9 +19,18 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "About" },
+]);
+
 export default function About() {
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
       {/* 1. Page Header */}
       <section className="relative py-24 px-4 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

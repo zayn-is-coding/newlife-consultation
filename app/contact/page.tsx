@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import ContactContent from "./_contact-content";
+import { buildBreadcrumbs } from "@/lib/metadata";
 
 const SITE_URL = process.env.SITE_URL || "https://www.newlifeconsulting.com";
 
@@ -17,10 +18,21 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Contact" },
+]);
+
 export default function Page() {
   return (
-    <Suspense>
-      <ContactContent />
-    </Suspense>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <Suspense>
+        <ContactContent />
+      </Suspense>
+    </>
   );
 }
