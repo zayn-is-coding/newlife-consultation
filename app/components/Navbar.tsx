@@ -19,8 +19,10 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+    if (!mobileOpen) return;
+    const id = requestAnimationFrame(() => setMobileOpen(false));
+    return () => cancelAnimationFrame(id);
+  }, [pathname, mobileOpen]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -38,7 +40,7 @@ export default function Navbar() {
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <nav className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="font-display text-xl font-bold text-primary hover:text-primary-dark transition-colors">
+            <Link href="/" className="font-display text-xl sm:font-bold font-extrabold text-primary hover:text-primary-dark transition-colors">
               New Life Consulting
             </Link>
 
