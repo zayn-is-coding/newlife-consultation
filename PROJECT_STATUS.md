@@ -41,7 +41,7 @@
 | Domain Name | ❌ Pending | Client needs help acquiring one |
 | Hosting | ❌ Pending | Client needs help setting up |
 | Copywriting | ❌ Pending | Client explicitly said "I need copywriting help" |
-| Photos / Graphics | ⚠️ Partial | Client has own photos; some placeholder Unsplash images still in use |
+| Photos / Graphics | ⚠️ Partial | Credit score screenshots are client's. Unsplash placeholders used for lifestyle/office shots — waiting on client to send replacements.
 
 ### SEO & Technical
 

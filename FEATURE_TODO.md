@@ -48,8 +48,8 @@
 - [ ] Add favicon from logo
 
 ### Client Photos
-- [ ] Receive actual photos from client
-- [ ] Replace Unsplash placeholder images in:
+- [ ] Wait for client to send additional photos (lifestyle, office, team)
+- [ ] Replace Unsplash placeholder images with client's actual photos:
   - [ ] Homepage value props (`proven-results.jpg`, `personal-touch.jpg`, `fast-simple.jpg`)
   - [ ] Homepage parallax breaks
   - [ ] About page workspace photos
