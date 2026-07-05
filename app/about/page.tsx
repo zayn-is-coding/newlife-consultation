@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Button from "../components/Button";
 import CreditSpeedometer from "../components/CreditSpeedometer";
+import Magnetic from "../components/Magnetic";
 import Parallax from "../components/Parallax";
 import ReviewsCarousel from "../components/ReviewsCarousel";
 
@@ -104,7 +106,7 @@ export default function About() {
       <section className="relative py-32 sm:py-40 px-4 overflow-hidden">
         <div className="absolute inset-0 flex flex-col">
           <Parallax intensity={-200} className="flex-1">
-            <img src="/images/about/hannah-busing-Zyx1bK9mqmA-unsplash.jpg" alt="" className="w-full h-[120%] object-cover mt-[-10%]" />
+            <Image src="/images/about/hannah-busing-Zyx1bK9mqmA-unsplash.jpg" alt="" className="w-full h-[120%] object-cover mt-[-10%]" width={1000} height={1000} />
           </Parallax>
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -184,7 +186,7 @@ export default function About() {
               { image: "/images/about/charlesdeluvio-Lks7vei-eAg-unsplash.jpg", alt: "Working with clients" },
             ].map((photo) => (
               <div key={photo.alt} className="rounded-2xl overflow-hidden aspect-4/3 bg-gray-200 image-card">
-                <img src={photo.image} alt={photo.alt} className="w-full h-full object-cover" />
+                <Image src={photo.image} alt={photo.alt} className="w-full h-full object-cover" width={500} height={500} />
               </div>
             ))}
           </div>
@@ -215,9 +217,11 @@ export default function About() {
           <p className="font-body text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Let&apos;s figure out where you are and where you want to be.
           </p>
-          <Button href="/booking" variant="white" size="lg">
-            Book Free Consultation
-          </Button>
+          <Magnetic>
+            <Button href="/booking" variant="white" size="lg">
+              Book Free Consultation
+            </Button>
+          </Magnetic>
         </div>
       </section>
     </div>

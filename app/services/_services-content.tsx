@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "../components/Button";
 import Parallax from "../components/Parallax";
+import Image from "next/image";
+import Link from "next/link";
 
 function CountUp({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -109,7 +111,7 @@ export default function Services() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden aspect-3/4 bg-gray-100">
-                <img src="/images/Screenshot_20260501_164240_Drive.jpg" alt="Credit report analysis" className="w-full h-full object-cover" />
+                <Image src="/images/Screenshot_20260501_164240_Drive.jpg" alt="Credit report analysis" className="w-full h-full object-cover" width={500} height={500} />
               </div>
               <div className="flex flex-col gap-4">
                 <div className="rounded-2xl bg-primary/5 p-6 flex flex-col justify-center aspect-square">
@@ -118,7 +120,7 @@ export default function Services() {
                   <p className="font-body text-sm text-gray-400 mt-1">Clients</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-square bg-gray-100">
-                  <img src="/images/Screenshot_20260503_114031_Telegram.jpg" alt="Client results" className="w-full h-full object-cover" />
+                  <Image src="/images/Screenshot_20260503_114031_Telegram.jpg" alt="Client results" className="w-full h-full object-cover" width={500} height={500} />
                 </div>
               </div>
             </div>
@@ -166,7 +168,7 @@ export default function Services() {
                 className="group p-8 rounded-2xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:border-gray-200 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] transition-all duration-300"
               >
                 <div className="mb-5">
-                  <img src={service.icon} alt="" className="w-28 h-28" />
+                  <Image src={service.icon} alt="" className="w-28 h-28" width={112} height={112} />
                 </div>
                 <h3 className="font-display font-semibold text-xl mb-3 text-foreground">{service.title}</h3>
                 <p className="font-body text-gray-500 text-sm leading-relaxed mb-6">{service.desc}</p>
@@ -180,12 +182,12 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-                <a href={`/contact?plan=${service.id}`} className="inline-flex items-center gap-2 font-body text-sm font-semibold transition-all duration-300 group-hover:gap-3" style={{ color: `var(${service.color})` }}>
+                <Link href={`/contact?plan=${service.id}`} className="inline-flex items-center gap-2 font-body text-sm font-semibold transition-all duration-300 group-hover:gap-3" style={{ color: `var(${service.color})` }}>
                   Get Started
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -239,7 +241,7 @@ export default function Services() {
             ].map((result, i) => (
               <div key={i} className="group">
                 <div className="rounded-2xl overflow-hidden mb-4 aspect-4/3 bg-gray-100">
-                  <img src={result.image} alt="Client result" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={result.image} alt="Client result" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width={500} height={500} />
                 </div>
                 <p className="font-display text-xl font-bold text-foreground mb-1">{result.stat}</p>
                 <p className="font-body text-sm text-gray-500">{result.desc}</p>
@@ -287,7 +289,13 @@ export default function Services() {
       <section className="relative py-32 sm:py-40 px-4 min-h-screen flex items-center justify-start overflow-hidden">
         <div className="absolute inset-0 flex flex-col">
           <Parallax intensity={-300} className="flex-1">
-            <img src="/images/services/helena-lopes-PGnqT0rXWLs-unsplash.jpg" alt="" className="w-full h-[120%] object-cover" />
+            <Image 
+              src="/images/services/helena-lopes-PGnqT0rXWLs-unsplash.jpg" 
+              alt="" 
+              width={1920} 
+              height={1080} 
+              className="w-full h-[120%] object-cover" 
+            />
           </Parallax>
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
         </div>
@@ -316,7 +324,7 @@ export default function Services() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="rounded-2xl overflow-hidden aspect-4/5 bg-gray-100">
-              <img src="/images/about/consultant.jpg" alt="Steffon Jean-Baptiste" className="w-full h-full object-cover" />
+              <Image src="/images/about/consultant.jpg" alt="Steffon Jean-Baptiste" className="w-full h-full object-cover" width={500} height={500} />
             </div>
             <div>
               <span className="inline-block px-4 py-2 bg-primary/10 rounded-full font-body text-sm font-medium mb-6 text-primary">
@@ -410,7 +418,7 @@ export default function Services() {
             Let&apos;s Transform Your Credit
           </h2>
           <p className="font-body text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Start with a free consultation. We'll tell you exactly where your credit stands and what to do next.
+            Start with a free consultation. We&apos;ll tell you exactly where your credit stands and what to do next.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking" variant="white" size="lg">Book Free Consultation</Button>

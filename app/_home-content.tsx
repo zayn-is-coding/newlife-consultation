@@ -7,12 +7,13 @@ import StaggerText from "./components/StaggerText";
 import Magnetic from "./components/Magnetic";
 import ParallaxText from "./components/ParallaxText";
 import ScrollReveal from "./components/ScrollReveal";
-import ParallaxSection from "./components/ParallaxSection";
 import Marquee from "./components/InfiniteCarousel";
 import Parallax from "./components/Parallax";
 import FaqAccordion from "./components/FaqAccordion";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import { homeFaqs } from "@/lib/faqs";
+import Image from "next/image";
+import Link from "next/link";
 
 const REVIEWS = [
   { text: "I was 29, renting, and getting denied for everything. Steffon walked me through my report line by line. Four months later I closed on my first house. I still can't believe it.", name: "James R.", role: "Credit Repair Client", initials: "JR", cssVar: "--primary" },
@@ -62,7 +63,7 @@ export default function Home() {
       <section className="relative py-16 sm:py-20 md:py-28 lg:py-32 px-4 bg-white overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 -right-20 sm:right-0 md:right-10 lg:right-20 -translate-y-1/2 w-[500px] h-[600px] sm:w-[600px] sm:h-[700px] lg:w-[700px] lg:h-[800px] opacity-[0.04] rotate-[-8deg] hidden sm:block">
-            <img src="/images/Screenshot_20260501_164240_Drive.jpg" alt="" className="w-full h-full object-cover rounded-3xl" />
+            <Image src="/images/Screenshot_20260501_164240_Drive.jpg" alt="" className="w-full h-full object-cover rounded-3xl" width={700} height={800} />
           </div>
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -135,7 +136,7 @@ export default function Home() {
             ].map((card) => (
               <div key={card.title} className="px-card bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="h-44 overflow-hidden">
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width={500} height={500} />
                 </div>
                 <div className="p-6 border-t border-gray-100">
                   <h3 className="font-display font-semibold text-lg mb-2 text-foreground">{card.title}</h3>
@@ -165,7 +166,7 @@ export default function Home() {
               { title: "Financial\nLiteracy", icon: "/svgs/Team Brainstorming 1.svg", cssVar: "--primary", desc: "Understand your finances", link: "/services#financial-literacy" },
               { title: "Consulting", icon: "/svgs/Consult Experts.svg", cssVar: "--danger", desc: "Expert guidance, always", link: "/services#consulting" },
             ].map((card) => (
-              <a
+              <Link
                 key={card.title}
                 href={card.link}
                 className="group shrink-0 w-[260px] sm:w-[320px] flex flex-col justify-between min-h-[320px] sm:min-h-[380px] rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer border-2 bg-white hover:-translate-y-1 hover:shadow-lg"
@@ -182,7 +183,7 @@ export default function Home() {
                 }}
               >
                 <div className="flex items-center justify-center py-12 sm:py-16">
-                  <img src={card.icon} alt="" className="w-28 h-28 sm:w-32 sm:h-32 transition-transform duration-300 group-hover:scale-110" />
+                  <Image src={card.icon} alt="" className="w-28 h-28 sm:w-32 sm:h-32 transition-transform duration-300 group-hover:scale-110" width={128} height={128} />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display font-semibold text-lg sm:text-xl text-foreground leading-snug whitespace-pre-line">{card.title}</h3>
@@ -195,7 +196,7 @@ export default function Home() {
                     </svg>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </Marquee>
         </div>
@@ -205,7 +206,7 @@ export default function Home() {
       <section className="relative py-32 sm:py-40 px-4 overflow-hidden">
         <div className="absolute inset-0 flex flex-col">
           <Parallax intensity={-200} className="flex-1">
-            <img src="/images/home/matt-foxx-IUY_3DvM__w-unsplash.jpg" alt="" className="w-full min-h-auto h-[120%] object-cover mt-[-10%]" />
+            <Image src="/images/home/matt-foxx-IUY_3DvM__w-unsplash.jpg" alt="" className="w-full min-h-auto h-[120%] object-cover mt-[-10%]" width={1920} height={1080} />
           </Parallax>
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
         </div>
@@ -215,7 +216,7 @@ export default function Home() {
               Every Client Starts With<br />a Free Consultation
             </StaggerText>
             <p className="font-body text-white/80 text-lg mb-8 max-w-lg">
-              In 30 minutes, we'll tell you exactly where your credit stands and what to do next.
+              In 30 minutes, we&apos;ll tell you exactly where your credit stands and what to do next.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Magnetic>
@@ -326,7 +327,7 @@ export default function Home() {
       <section className="relative py-32 sm:py-40 min-h-screen flex items-center justify-start px-4 overflow-hidden">
         <div className="absolute inset-0 flex flex-col">
           <Parallax intensity={-200} className="flex-1">
-            <img src="/images/home/proven-results.jpg" alt="" className="w-full h-[120%] object-cover" />
+            <Image src="/images/home/proven-results.jpg" alt="" className="w-full h-[120%] object-cover" width={1920} height={1080} />
           </Parallax>
           <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
         </div>
