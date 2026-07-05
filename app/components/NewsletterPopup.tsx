@@ -2,6 +2,7 @@
 
 import { useState, useEffect, FormEvent } from "react";
 import toast from "react-hot-toast";
+import Button from "./Button";
 
 const DISMISSED_KEY = "nl_newsletter_dismissed";
 
@@ -112,10 +113,12 @@ export default function NewsletterPopup() {
               autoFocus
               className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl font-body text-foreground placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary/40 transition-colors duration-200"
             />
-            <button
+            <Button
               type="submit"
+              variant="secondary"
+              fullWidth
               disabled={status === "submitting"}
-              className="w-full py-3 bg-secondary hover:bg-secondary-light text-white font-display font-semibold text-lg rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-secondary/25"
+              className="py-3 text-lg"
             >
               {status === "submitting" ? (
                 <span className="flex items-center justify-center gap-2">
@@ -128,7 +131,7 @@ export default function NewsletterPopup() {
               ) : (
                 "Send Me the Checklist"
               )}
-            </button>
+            </Button>
           </form>
 
           <p className="font-body text-xs text-gray-400 text-center mt-4">
