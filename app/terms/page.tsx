@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/lib/metadata";
+import Link from "next/link";
 
 export const metadata: Metadata = createMetadata({
   title: "Terms & Conditions",
@@ -108,7 +109,7 @@ export default function TermsAndConditions() {
               <h2 className="font-display text-2xl font-bold text-foreground mb-4">9. Privacy</h2>
               <p className="mb-4">
                 Your use of our services is also governed by our{" "}
-                <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>, which is incorporated into these terms by reference. Please review it to understand how we collect and handle your information.
+                <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>, which is incorporated into these terms by reference. Please review it to understand how we collect and handle your information.
               </p>
             </div>
 
@@ -143,8 +144,8 @@ export default function TermsAndConditions() {
                 If you have any questions about these Terms and Conditions, please contact us:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Email: <a href="mailto:baptistesteffon@gmail.com" className="text-primary hover:underline">baptistesteffon@gmail.com</a></li>
-                <li>Phone: <a href="tel:9178089765" className="text-primary hover:underline">(917) 808-9765</a></li>
+                <li>Email: <Link href="mailto:baptistesteffon@gmail.com" className="text-primary hover:underline">baptistesteffon@gmail.com</Link></li>
+                <li>Phone: <Link href="tel:9178089765" className="text-primary hover:underline">(917) 808-9765</Link></li>
               </ul>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/lib/metadata";
+import Link from "next/link";
 
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
@@ -102,7 +103,7 @@ export default function PrivacyPolicy() {
               </ul>
               <p className="mt-4">
                 To exercise any of these rights, contact us at{" "}
-                <a href="mailto:baptistesteffon@gmail.com" className="text-primary hover:underline">baptistesteffon@gmail.com</a>.
+                <Link href="mailto:baptistesteffon@gmail.com" className="text-primary hover:underline">baptistesteffon@gmail.com</Link>.
               </p>
             </div>
 
@@ -145,8 +146,8 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Email: <a href="mailto:baptistesteffon@gmail.com" className="text-primary hover:underline">baptistesteffon@gmail.com</a></li>
-                <li>Phone: <a href="tel:9178089765" className="text-primary hover:underline">(917) 808-9765</a></li>
+                <li>Email: <Link href="mailto:baptistesteffon@gmail.com" className="text-primary hover:underline">baptistesteffon@gmail.com</Link></li>
+                <li>Phone: <Link href="tel:9178089765" className="text-primary hover:underline">(917) 808-9765</Link></li>
               </ul>
             </div>
           </div>
