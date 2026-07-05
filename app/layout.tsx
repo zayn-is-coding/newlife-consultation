@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsent from "./components/CookieConsent";
+import NewsletterPopup from "./components/NewsletterPopup";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { cn } from "@/lib/utils";
@@ -73,6 +74,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
+        <NewsletterPopup />
       </body>
     </html>
   );

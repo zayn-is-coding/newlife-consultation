@@ -44,10 +44,10 @@ export default function NewsletterSignup() {
   return (
     <div>
       <h4 className="font-display font-semibold text-sm uppercase tracking-wider mb-3 text-gray-300">
-        Stay Updated
+        Free Credit Tips
       </h4>
       <p className="font-body text-sm text-gray-400 mb-4 leading-relaxed">
-        Credit tips, industry updates, and exclusive offers. No spam.
+        Get our 5-step credit repair checklist + weekly tips that have helped 2,400+ people raise their scores.
       </p>
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
@@ -69,7 +69,7 @@ export default function NewsletterSignup() {
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
             </svg>
           ) : (
-            "Subscribe"
+            "Get Free Guide"
           )}
         </button>
       </form>
