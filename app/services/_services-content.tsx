@@ -36,7 +36,7 @@ const services = [
   {
     id: "credit-analysis",
     title: "Credit Score Analysis",
-    desc: "Full breakdown of your credit report from all three bureaus. We dig into every factor and give you a clear roadmap.",
+    desc: "Know exactly where your credit stands and what to fix first. We pull all three reports and give you a clear roadmap.",
     features: ["Full tri-bureau credit report review", "Score factor breakdown", "Identification of all negative items", "Personalized action plan", "30-minute walkthrough consultation"],
     icon: "/svgs/Work Collaboration 2.svg",
     color: "--secondary",
@@ -44,7 +44,7 @@ const services = [
   {
     id: "credit-repair",
     title: "Credit Repair",
-    desc: "We handle the entire dispute process with Equifax, Experian, and TransUnion. You stay informed every step of the way.",
+    desc: "We fight to remove errors from your credit report. You stay informed every step of the way.",
     features: ["Dispute of all inaccurate negative items", "Direct communication with all three bureaus", "Creditor negotiations and goodwill adjustments", "Monthly progress reports", "FCRA-compliant process", "Average 40-80 point increase in 90 days"],
     icon: "/svgs/Approval 4.svg",
     color: "--accent",
@@ -52,7 +52,7 @@ const services = [
   {
     id: "financial-planning",
     title: "Financial Planning",
-    desc: "Build a real financial plan covering budgeting, saving, investing, and wealth building that lasts.",
+    desc: "A real plan for your money that covers budgeting, saving, and building wealth that lasts.",
     features: ["Custom budget tailored to your lifestyle", "Emergency fund strategy", "Debt payoff roadmap with projections", "Savings and investment strategies", "Retirement planning", "Quarterly check-ins"],
     icon: "/svgs/financial-literacy.svg",
     color: "--success",
@@ -60,7 +60,7 @@ const services = [
   {
     id: "debt-management",
     title: "Debt Management",
-    desc: "Stop collection calls. We negotiate with creditors to cut balances and build a payoff strategy that fits your life.",
+    desc: "Stop collection calls. We negotiate with creditors to cut what you owe and build a payoff strategy.",
     features: ["Complete debt audit", "Creditor negotiations for reduced balances", "Collection agency cease-and-desist", "Consolidation and settlement evaluation", "Payment plan structuring", "FDCPA protection"],
     icon: "/svgs/manager-desk.svg",
     color: "--warning",
@@ -68,7 +68,7 @@ const services = [
   {
     id: "financial-literacy",
     title: "Financial Literacy",
-    desc: "Learn how credit really works. One-on-one sessions and group workshops so you always know your next move.",
+    desc: "Understand your credit report, your rights, and exactly what to do next. One-on-one sessions and group workshops.",
     features: ["How credit scores actually work", "Reading and interpreting credit reports", "Your rights under FCRA and FDCPA", "Building credit from scratch", "Smart borrowing strategies", "Group workshops available"],
     icon: "/svgs/Team Brainstorming 1.svg",
     color: "--primary",
@@ -76,7 +76,7 @@ const services = [
   {
     id: "consulting",
     title: "Expert Consulting",
-    desc: "Direct access to an experienced credit professional for mortgage prep, business credit, or any financial question.",
+    desc: "Get answers to any credit question from someone who's done this 500+ times.",
     features: ["One-on-one sessions (in-person or virtual)", "Mortgage readiness assessment", "Business credit building", "Real estate investment planning", "Post-bankruptcy rebuilding", "Priority scheduling"],
     icon: "/svgs/Consult Experts.svg",
     color: "--danger",
@@ -99,9 +99,8 @@ export default function Services() {
                 What We Offer
               </span>
               <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-[0.95] text-foreground">
-                Real Help
-                <br />
-                <span className="text-primary">For Your Credit</span>
+                Credit Consulting That<br />
+                <span className="text-primary">Delivers Results</span>
               </h1>
               <p className="font-body text-lg text-gray-600 mb-8 max-w-lg">
                 Everything you need to fix your credit, manage your debt, and build a stronger financial future.
@@ -153,7 +152,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Our Services
+              Every Service We Offer, Explained Simply
             </h2>
             <p className="font-body text-lg text-gray-500 max-w-xl">
               Comprehensive credit consulting. Every service is built around your situation.
@@ -206,7 +205,7 @@ export default function Services() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: "01", title: "Free Consultation", desc: "We talk through your situation. No commitment, no sales pitch.", color: "--primary" },
+              { step: "01", title: "Free Consultation", desc: "We discuss your situation, goals, and what's holding you back.", color: "--primary" },
               { step: "02", title: "Credit Analysis", desc: "We pull all three reports, find every issue, and map out opportunities.", color: "--secondary" },
               { step: "03", title: "Custom Plan", desc: "A strategy built around your timeline, budget, and goals.", color: "--accent" },
               { step: "04", title: "See Results", desc: "Your score starts climbing as we handle everything.", color: "--success" },
@@ -255,7 +254,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Why Choose New Life
+              Why 500+ People Chose New Life
             </h2>
             <p className="font-body text-lg text-gray-500 max-w-xl">
               Plenty of credit companies out there. Here&apos;s why people pick us.
@@ -295,7 +294,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Don&apos;t Wait for<br />Your Score to Fix Itself
+              Every Month You Wait<br />Costs You Real Money
             </h2>
             <p className="font-body text-white/80 text-lg mb-8 max-w-lg">
               Every month you wait is another month of high interest rates, denied applications, and missed opportunities. Let&apos;s change that today.
@@ -411,7 +410,7 @@ export default function Services() {
             Let&apos;s Transform Your Credit
           </h2>
           <p className="font-body text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Start with a free consultation. No commitment, no pressure. Just an honest conversation about where you are and where you want to go.
+            Start with a free consultation. We'll tell you exactly where your credit stands and what to do next.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking" variant="white" size="lg">Book Free Consultation</Button>

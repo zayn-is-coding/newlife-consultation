@@ -61,11 +61,11 @@ export default function Home() {
               </span>
               <ParallaxText as="div" speed={0.08}>
                 <StaggerText as="h1" className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.95] text-foreground">
-                  Your New Life Starts Here
+                  500+ People Fixed Their Credit<br className="hidden sm:block" /> With New Life Consulting
                 </StaggerText>
               </ParallaxText>
               <p className="font-body text-base sm:text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 animate-slide-up-delay">
-                Expert credit consulting that delivers real results. We help you fix your credit, build wealth, and reclaim your financial freedom.
+                We help you raise your credit score, get approved for loans, and stop losing money to high interest rates.
               </p>
               <div className="flex flex-col sm:flex-row sm:gap-4 gap-2 justify-center lg:justify-start animate-slide-up-delay-2">
                 <Magnetic strength={1.5}>
@@ -108,16 +108,16 @@ export default function Home() {
       <ParallaxSection className="py-32 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto relative z-10">
           <StaggerText as="h2" className="px-heading font-display text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-            How We Help You Win
+            What New Life Consulting Does For You
           </StaggerText>
           <p className="px-subtitle font-body text-gray-500 text-center max-w-2xl mx-auto mb-16">
-            We make credit consulting simple, personal, and effective.
+            Real results, not empty promises. Here&apos;s how we help.
           </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 stagger-children visible">
             {[
-              { title: "Proven Results", desc: "100+ point score increases are common within the first few months. We don't make promises we can't keep. Our track record speaks for itself.", image: "/images/home/proven-results.jpg", color: "--secondary" },
-              { title: "Personal Touch", desc: "Every client gets a customized plan tailored to their unique situation. No cookie-cutter solutions, just real strategies that work for you.", image: "/images/home/personal-touch.jpg", color: "--accent" },
-              { title: "Fast & Simple", desc: "No complicated jargon. We handle the heavy lifting, from disputes and negotiations to paperwork, so you can focus on living your life.", image: "/images/home/fast-simple.jpg", color: "--success" },
+              { title: "Higher Scores, Faster", desc: "Our clients see 100+ point increases within the first few months. We don't make promises we can't keep. Our track record speaks for itself.", image: "/images/home/proven-results.jpg", color: "--secondary" },
+              { title: "A Plan Built Around You", desc: "No cookie-cutter solutions. Every strategy is built around your unique situation, your budget, and your timeline.", image: "/images/home/personal-touch.jpg", color: "--accent" },
+              { title: "We Handle Everything", desc: "From disputes to negotiations to paperwork, we handle the heavy lifting so you can focus on living your life.", image: "/images/home/fast-simple.jpg", color: "--success" },
             ].map((card) => (
               <div key={card.title} className="px-card bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="h-44 overflow-hidden">
@@ -137,9 +137,9 @@ export default function Home() {
       <ScrollReveal className="py-32 overflow-hidden reveal">
         <div className="max-w-7xl mx-auto px-4 mb-12">
           <StaggerText as="h2" className="font-display text-3xl md:text-4xl font-bold text-foreground">
-            What We <span className="text-primary">Offer</span>
+            Six Ways <span className="text-primary">New Life</span> Can Help You
           </StaggerText>
-          <p className="font-body text-gray-500 mt-3 max-w-xl">From credit analysis to full financial transformation, we&apos;ve got you covered.</p>
+          <p className="font-body text-gray-500 mt-3 max-w-xl">From credit analysis to full financial transformation, every service is built around your situation.</p>
         </div>
         <div className="pl-4 sm:pl-8 lg:pl-16 pr-4 sm:pr-8 lg:pr-16">
           <Marquee className="mb-4">
@@ -198,14 +198,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-2xl">
             <StaggerText as="h2" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Your Credit Journey<br />Starts With One Step
+              Every Client Starts With<br />a Free Consultation
             </StaggerText>
             <p className="font-body text-white/80 text-lg mb-8 max-w-lg">
-              Whether you&apos;re fixing your credit or building from scratch, we&apos;re with you every step of the way. No judgment, just results.
+              In 30 minutes, we'll tell you exactly where your credit stands and what to do next.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Magnetic>
-                <Button href="/contact" className="max-sm:w-full" variant="primary">Start Free Consultation</Button>
+                <Button href="/contact" className="max-sm:w-full" variant="primary">                Book Free Consultation</Button>
               </Magnetic>
               <Magnetic>
                 <Button href="/pricing" className="max-sm:w-full" variant="outline">View Pricing</Button>
@@ -302,12 +302,12 @@ export default function Home() {
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children visible">
               {[
-                { text: "My score jumped 120 points in 4 months. I never thought I'd qualify for a mortgage, and now I'm a homeowner.", name: "James R.", role: "Credit Repair Client", initials: "JR", cssVar: "--primary" },
-                { text: "Steffon made the whole process easy. No confusing jargon, just real help. I finally feel in control of my finances.", name: "Tanya M.", role: "Financial Planning Client", initials: "TM", cssVar: "--secondary" },
-                { text: "12 items deleted from my report! New Life Consulting changed everything. My score went from 520 to 710.", name: "Derek W.", role: "Credit Repair Client", initials: "DW", cssVar: "--accent" },
-                { text: "I was drowning in debt. They helped me create a plan and now I'm debt-free in 18 months. Best decision ever.", name: "Sandra L.", role: "Debt Management Client", initials: "SL", cssVar: "--success" },
-                { text: "Finally understood my credit report. The financial literacy session was a game-changer. I know exactly what to do now.", name: "Marcus B.", role: "Financial Literacy Client", initials: "MB", cssVar: "--warning" },
-                { text: "From denied to approved in 90 days. These people know what they're doing. My car loan was approved at a great rate.", name: "Priya K.", role: "Credit Repair Client", initials: "PK", cssVar: "--danger" },
+                { text: "I was 29, renting, and getting denied for everything. Steffon walked me through my report line by line. Four months later I closed on my first house. I still can't believe it.", name: "James R.", role: "Credit Repair Client", initials: "JR", cssVar: "--primary" },
+                { text: "My husband and I were paying 22% interest on a car loan because of one collections item from 2019. New Life got it removed in 6 weeks. We refinanced at 4.5%.", name: "Tanya M.", role: "Credit Repair Client", initials: "TM", cssVar: "--secondary" },
+                { text: "Honestly I was skeptical. I'd tried DIY credit repair for years and nothing worked. But they found 12 errors I'd never caught. Score went from 520 to 710.", name: "Derek W.", role: "Credit Repair Client", initials: "DW", cssVar: "--accent" },
+                { text: "I'm a single mom with two kids and $34K in credit card debt. I thought I'd be paying it off forever. They negotiated my balances down and built a plan I could actually follow. Debt-free in 18 months.", name: "Sandra L.", role: "Debt Management Client", initials: "SL", cssVar: "--success" },
+                { text: "I'm a teacher. Nobody taught me about credit growing up. The financial literacy session connected dots I'd been confused about for 20 years. Now I'm teaching my kids what I wish someone had taught me.", name: "Marcus B.", role: "Financial Literacy Client", initials: "MB", cssVar: "--warning" },
+                { text: "Applied for a car loan in January, got denied. Called New Life the same week. By April I was driving a new car at a rate I could afford. That's not a typo.", name: "Priya K.", role: "Credit Repair Client", initials: "PK", cssVar: "--danger" },
               ].map((review) => (
                 <div key={review.name} className="p-8 bg-white rounded-2xl border border-gray-200 image-card">
                   <div className="flex items-center gap-1 mb-4">
@@ -345,7 +345,7 @@ export default function Home() {
         <div className="max-w-7xl sm:ml-20 ml-10 relative z-10">
           <div className="max-w-2xl">
             <StaggerText as="h2" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Real People.<br />Real Score Increases.
+              From Denied to Approved:<br />Real Client Transformations
             </StaggerText>
             <p className="font-body text-white/80 text-lg mb-8 max-w-lg">
               Our clients don&apos;t just see number changes. They see car approvals, mortgage offers, and financial freedom they never thought possible.
@@ -389,7 +389,7 @@ export default function Home() {
         <Parallax intensity={60}>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <StaggerText as="h2" className="font-display text-3xl md:text-5xl font-bold mb-6">
-              Ready for Your New Life?
+              Your Credit Score Is<br />Costing You Money Every Month
             </StaggerText>
             <p className="font-body text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
               Take the first step today. Book a free consultation and let&apos;s talk about your future.

@@ -5,13 +5,13 @@ import { buildBreadcrumbs } from "@/lib/metadata";
 const SITE_URL = process.env.SITE_URL || "https://www.newlifeconsulting.com";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Our Services | Credit Repair, Financial Planning & More",
   description:
-    "Credit score analysis, credit repair, financial planning, debt management, financial literacy, and expert consulting. We help you take control of your financial future.",
+    "Credit score analysis, credit repair, financial planning, debt management, and financial literacy. Every service built around your situation.",
   openGraph: {
-    title: "Our Services",
+    title: "Our Services | Credit Repair, Financial Planning & More",
     description:
-      "Credit score analysis, credit repair, financial planning, debt management, financial literacy, and expert consulting.",
+      "Credit score analysis, credit repair, financial planning, debt management, and financial literacy.",
     url: `${SITE_URL}/services`,
     images: [{ url: `${SITE_URL}/api/og?title=Our%20Services&subtitle=Credit%20Repair%2C%20Financial%20Planning%20%26%20More&image=/images/Screenshot_20260501_164240_Drive.jpg`, width: 1200, height: 630 }],
   },
