@@ -11,7 +11,21 @@ import ParallaxSection from "./components/ParallaxSection";
 import Marquee from "./components/InfiniteCarousel";
 import Parallax from "./components/Parallax";
 import FaqAccordion from "./components/FaqAccordion";
+import ReviewsCarousel from "./components/ReviewsCarousel";
 import { homeFaqs } from "@/lib/faqs";
+
+const REVIEWS = [
+  { text: "I was 29, renting, and getting denied for everything. Steffon walked me through my report line by line. Four months later I closed on my first house. I still can't believe it.", name: "James R.", role: "Credit Repair Client", initials: "JR", cssVar: "--primary" },
+  { text: "My husband and I were paying 22% interest on a car loan because of one collections item from 2019. New Life got it removed in 6 weeks. We refinanced at 4.5%.", name: "Tanya M.", role: "Credit Repair Client", initials: "TM", cssVar: "--secondary" },
+  { text: "Honestly I was skeptical. I'd tried DIY credit repair for years and nothing worked. But they found 12 errors I'd never caught. Score went from 520 to 710.", name: "Derek W.", role: "Credit Repair Client", initials: "DW", cssVar: "--accent" },
+  { text: "I'm a single mom with two kids and $34K in credit card debt. I thought I'd be paying it off forever. They negotiated my balances down and built a plan I could actually follow. Debt-free in 18 months.", name: "Sandra L.", role: "Debt Management Client", initials: "SL", cssVar: "--success" },
+  { text: "I'm a teacher. Nobody taught me about credit growing up. The financial literacy session connected dots I'd been confused about for 20 years. Now I'm teaching my kids what I wish someone had taught me.", name: "Marcus B.", role: "Financial Literacy Client", initials: "MB", cssVar: "--warning" },
+  { text: "Applied for a car loan in January, got denied. Called New Life the same week. By April I was driving a new car at a rate I could afford. That's not a typo.", name: "Priya K.", role: "Credit Repair Client", initials: "PK", cssVar: "--danger" },
+  { text: "After my divorce my credit was destroyed. 480 score. New Life didn't judge me, they just got to work. Two years later I bought my own place. Steffon changed my life.", name: "Angela T.", role: "Credit Repair Client", initials: "AT", cssVar: "--primary" },
+  { text: "I own a small business and needed capital. Banks kept saying no because of my personal credit. New Life fixed my credit and now I have a $50K line of credit at 6%.", name: "Carlos M.", role: "Business Credit Client", initials: "CM", cssVar: "--secondary" },
+  { text: "The financial literacy session was a wake-up call. I learned things in one hour that would have taken me years to figure out. My score jumped 80 points in 3 months.", name: "Nicole P.", role: "Financial Literacy Client", initials: "NP", cssVar: "--accent" },
+  { text: "I was paying $300/month for car insurance because of my credit. After working with New Life, my score went up 150 points and my insurance dropped to $140/month. That's $1,920/year back in my pocket.", name: "Latisha J.", role: "Credit Repair Client", initials: "LJ", cssVar: "--warning" },
+];
 
 function CountUp({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -105,7 +119,7 @@ export default function Home() {
       </ScrollReveal>
 
       {/* 3. Value Props */}
-      <ParallaxSection className="py-32 px-4 bg-gray-50">
+      <section className="py-32 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto relative z-10">
           <StaggerText as="h2" className="px-heading font-display text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
             What New Life Consulting Does For You
@@ -131,7 +145,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* 4. Services Carousel */}
       <ScrollReveal className="py-32 overflow-hidden reveal">
@@ -291,48 +305,22 @@ export default function Home() {
       </ScrollReveal>
 
       {/* 7. Social Proof */}
-      <Parallax intensity={30}>
-        <ScrollReveal className="py-32 px-4 bg-gray-50 reveal">
-          <div className="max-w-7xl mx-auto">
-            <StaggerText as="h2" className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-              What Our Clients Say
-            </StaggerText>
-            <p className="font-body text-gray-500 text-center max-w-2xl mx-auto mb-16">
-              Real stories from real people who transformed their credit.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children visible">
-              {[
-                { text: "I was 29, renting, and getting denied for everything. Steffon walked me through my report line by line. Four months later I closed on my first house. I still can't believe it.", name: "James R.", role: "Credit Repair Client", initials: "JR", cssVar: "--primary" },
-                { text: "My husband and I were paying 22% interest on a car loan because of one collections item from 2019. New Life got it removed in 6 weeks. We refinanced at 4.5%.", name: "Tanya M.", role: "Credit Repair Client", initials: "TM", cssVar: "--secondary" },
-                { text: "Honestly I was skeptical. I'd tried DIY credit repair for years and nothing worked. But they found 12 errors I'd never caught. Score went from 520 to 710.", name: "Derek W.", role: "Credit Repair Client", initials: "DW", cssVar: "--accent" },
-                { text: "I'm a single mom with two kids and $34K in credit card debt. I thought I'd be paying it off forever. They negotiated my balances down and built a plan I could actually follow. Debt-free in 18 months.", name: "Sandra L.", role: "Debt Management Client", initials: "SL", cssVar: "--success" },
-                { text: "I'm a teacher. Nobody taught me about credit growing up. The financial literacy session connected dots I'd been confused about for 20 years. Now I'm teaching my kids what I wish someone had taught me.", name: "Marcus B.", role: "Financial Literacy Client", initials: "MB", cssVar: "--warning" },
-                { text: "Applied for a car loan in January, got denied. Called New Life the same week. By April I was driving a new car at a rate I could afford. That's not a typo.", name: "Priya K.", role: "Credit Repair Client", initials: "PK", cssVar: "--danger" },
-              ].map((review) => (
-                <div key={review.name} className="p-8 bg-white rounded-2xl border border-gray-200 image-card">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="font-body text-gray-600 mb-6">&ldquo;{review.text}&rdquo;</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `color-mix(in srgb, var(${review.cssVar}) 15%, transparent)` }}>
-                      <span className="font-body font-semibold text-sm" style={{ color: `var(${review.cssVar})` }}>{review.initials}</span>
-                    </div>
-                    <div>
-                      <p className="font-body font-semibold text-foreground text-sm">{review.name}</p>
-                      <p className="font-body text-gray-400 text-xs">{review.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <ScrollReveal className="py-32 px-4 bg-gray-50 reveal">
+        <div className="max-w-7xl mx-auto">
+          <StaggerText as="h2" className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+            What Our Clients Say
+          </StaggerText>
+          <p className="font-body text-gray-500 text-center max-w-2xl mx-auto mb-16">
+            Real stories from real people who transformed their credit.
+          </p>
+          <ReviewsCarousel reviews={REVIEWS} />
+          <div className="text-center mt-12">
+            <Magnetic>
+              <Button href="/about#reviews" variant="outline">See All Reviews</Button>
+            </Magnetic>
           </div>
-        </ScrollReveal>
-      </Parallax>
+        </div>
+      </ScrollReveal>
 
       {/* 7b. Large Image Break */}
       <section className="relative py-32 sm:py-40 min-h-screen flex items-center justify-start px-4 overflow-hidden">
