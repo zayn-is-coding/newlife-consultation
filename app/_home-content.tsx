@@ -396,7 +396,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Magnetic strength={1}>
-                <Button href="/contact" className="max-sm:w-full" variant="white" size="lg">Book Free Consultation</Button>
+                <Button href="/booking" className="max-sm:w-full" variant="white" size="lg">Book Free Consultation</Button>
               </Magnetic>
               <Magnetic strength={1}>
                 <Button href="/pricing" className="max-sm:w-full" variant="white" size="lg">View Pricing</Button>

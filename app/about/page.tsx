@@ -183,7 +183,7 @@ export default function About() {
           <p className="font-body text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Let&apos;s figure out where you are and where you want to be.
           </p>
-          <Button href="/contact" variant="white" size="lg">
+          <Button href="/booking" variant="white" size="lg">
             Book Free Consultation
           </Button>
         </div>

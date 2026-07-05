@@ -198,7 +198,7 @@ export default function Pricing() {
           <p className="font-body text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Book your free consultation and let&apos;s build a plan for your financial future.
           </p>
-          <Button href="/contact?plan=consultation" variant="white" size="lg">
+          <Button href="/booking" variant="white" size="lg">
             Book Free Consultation
           </Button>
         </div>

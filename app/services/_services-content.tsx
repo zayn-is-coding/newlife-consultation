@@ -301,7 +301,7 @@ export default function Services() {
               Every month you wait is another month of high interest rates, denied applications, and missed opportunities. Let&apos;s change that today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/contact?plan=consultation" className="max-sm:w-full" variant="primary">
+              <Button href="/booking" className="max-sm:w-full" variant="primary">
                 Book Free Consultation
               </Button>
               <Button href="/pricing" className="max-sm:w-full" variant="outline">
@@ -414,7 +414,7 @@ export default function Services() {
             Start with a free consultation. No commitment, no pressure. Just an honest conversation about where you are and where you want to go.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact?plan=consultation" variant="white" size="lg">Book Free Consultation</Button>
+            <Button href="/booking" variant="white" size="lg">Book Free Consultation</Button>
             <Button href="/pricing" variant="outline" size="lg">View Pricing</Button>
           </div>
         </div>

@@ -1,11 +1,20 @@
 "use client";
 
+import NewsletterSignup from "./NewsletterSignup";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#0f172a] text-white">
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
+        {/* Newsletter — full width above the grid */}
+        <div className="mb-14 pb-14 border-b border-white/10">
+          <div className="max-w-md">
+            <NewsletterSignup />
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
