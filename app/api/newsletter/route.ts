@@ -37,18 +37,18 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: "New Life Consulting <noreply@newlifeconsulting.com>",
       to: email,
-      subject: "Welcome to New Life Consulting",
+      subject: "Your 5-Step Credit Checklist Is Inside",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1e3a8a; margin-bottom: 16px;">Welcome to New Life Consulting!</h2>
+          <h2 style="color: #1e3a8a; margin-bottom: 16px;">Here's Your Credit Repair Checklist</h2>
           <p style="color: #475569; line-height: 1.6; margin-bottom: 16px;">
-            Thanks for subscribing. You'll receive credit tips, industry updates, and exclusive offers directly to your inbox.
+            You now have the same 5-step checklist that helped 2,400+ people raise their credit scores. Here's what to do first:
           </p>
           <p style="color: #475569; line-height: 1.6; margin-bottom: 24px;">
-            If you're ready to take the next step, book a free consultation:
+            When you're ready for a personalized plan, book a free consultation with one of our credit consultants:
           </p>
           <a href="https://www.newlifeconsulting.com/booking" style="display: inline-block; background: #0d9488; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-            Book Free Consultation
+            Book Your Free Consultation
           </a>
           <p style="color: #94a3b8; font-size: 13px; margin-top: 32px;">
             New Life Consulting | Credit Consulting for Everyday People
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Newsletter subscription error:", error);
     return NextResponse.json(
-      { error: "Something went wrong. Please try again later." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }

@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import toast from "react-hot-toast";
+import Button from "./Button";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
@@ -44,10 +45,10 @@ export default function NewsletterSignup() {
   return (
     <div>
       <h4 className="font-display font-semibold text-sm uppercase tracking-wider mb-3 text-gray-300">
-        Free Credit Tips
+        New Life Credit Guide
       </h4>
       <p className="font-body text-sm text-gray-400 mb-4 leading-relaxed">
-        Get our 5-step credit repair checklist + weekly tips that have helped 2,400+ people raise their scores.
+        The 5-step checklist that helped 2,400+ people raise their credit scores. Free from New Life Consulting.
       </p>
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
@@ -58,9 +59,10 @@ export default function NewsletterSignup() {
           required
           className="flex-1 px-4 py-2.5 bg-white/5 border border-white/10 rounded-lg font-body text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary/40 transition-colors duration-200"
         />
-        <button
+        <Button
           type="submit"
           disabled={status === "submitting"}
+          variant="secondary"
           className="px-4 py-2.5 bg-secondary hover:bg-secondary-light text-white font-body text-sm font-semibold rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
         >
           {status === "submitting" ? (
@@ -69,9 +71,9 @@ export default function NewsletterSignup() {
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
             </svg>
           ) : (
-            "Get Free Guide"
+            "Send Me the Checklist"
           )}
-        </button>
+        </Button>
       </form>
     </div>
   );

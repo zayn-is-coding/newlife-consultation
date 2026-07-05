@@ -40,7 +40,7 @@ export default function NewsletterPopup() {
 
       if (!res.ok) {
         toast.dismiss(loadingToast);
-        toast.error(json.error || "Something went wrong.");
+        toast.error(json.error || "Something went wrong. Please try again.");
         setStatus("idle");
         return;
       }
@@ -93,13 +93,13 @@ export default function NewsletterPopup() {
           </div>
 
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Get Your Free Credit Repair Guide
+            The Credit Checklist 2,400+ People Used to Raise Their Scores
           </h2>
           <p className="font-body text-gray-500 mb-2 leading-relaxed">
-            Join 2,400+ people who got our <strong className="text-foreground">5-step checklist</strong> to raise their credit score — sent straight to your inbox.
+            New Life Consulting's <strong className="text-foreground">5-step credit repair checklist</strong>. The same one our clients used to boost their scores, delivered free to your inbox.
           </p>
           <p className="font-body text-sm text-gray-400 mb-6">
-            Plus weekly tips, industry updates, and exclusive offers. Unsubscribe anytime.
+            Plus weekly tips from our credit consultants. Unsubscribe anytime.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-3">
@@ -126,13 +126,13 @@ export default function NewsletterPopup() {
                   Sending...
                 </span>
               ) : (
-                "Send Me the Guide"
+                "Send Me the Checklist"
               )}
             </button>
           </form>
 
           <p className="font-body text-xs text-gray-400 text-center mt-4">
-            No spam. Just real advice that works.
+            Trusted by 2,400+ people improving their credit.
           </p>
         </div>
       </div>

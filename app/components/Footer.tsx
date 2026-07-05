@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 pt-16 pb-8">
         {/* Newsletter — full width above the grid */}
         <div className="mb-14 pb-14 border-b border-white/10">
-          <div className="max-w-md">
+          <div className="md:max-w-2xl">
             <NewsletterSignup />
           </div>
         </div>

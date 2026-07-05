@@ -52,13 +52,13 @@ export async function POST(req: NextRequest) {
     let subject: string;
     let heading: string;
     if (planInfo && type === "plan") {
-      subject = `New Plan Inquiry: ${name} — ${planInfo.name} (${planInfo.price})`;
+      subject = `New Plan Inquiry: ${name} - ${planInfo.name} (${planInfo.price})`;
       heading = "New Plan Inquiry";
     } else if (type === "service") {
-      subject = `New Service Inquiry: ${name} — ${serviceLabel}`;
+      subject = `New Service Inquiry: ${name} - ${serviceLabel}`;
       heading = "New Service Inquiry";
     } else {
-      subject = `New Contact: ${name} — ${serviceLabel}`;
+      subject = `New Contact: ${name} - ${serviceLabel}`;
       heading = "New Contact Form Submission";
     }
 
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
             ${type === "plan" && planInfo ? `
             <tr>
               <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">Plan</td>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-weight: 600;">${planInfo.name}${planInfo.price ? ` — ${planInfo.price}` : ""}</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b; font-weight: 600;">${planInfo.name}${planInfo.price ? ` - ${planInfo.price}` : ""}</td>
             </tr>
             ` : ""}
             <tr>
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Contact form error:", error);
     return NextResponse.json(
-      { error: "Something went wrong. Please try again later." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }
