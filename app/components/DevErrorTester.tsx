@@ -20,35 +20,32 @@ export default function DevErrorTester() {
 
       {/* Panel */}
       {open && (
-        <div className="absolute bottom-14 right-0 bg-foreground text-white rounded-xl shadow-2xl p-4 w-56 animate-scale-in">
+        <div className="absolute bottom-14 right-0 bg-foreground text-white rounded-xl shadow-2xl p-4 w-64 animate-scale-in">
           <p className="font-body text-xs font-semibold mb-3 text-gray-300 uppercase tracking-wider">
-            Error Tester
+            Dev Error Tester
           </p>
           <div className="space-y-2">
-            <button
-              onClick={() => {
-                throw new Error("Test error from DevErrorTester");
-              }}
-              className="w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors cursor-pointer"
+            <a
+              href="/dev/error-test"
+              className="block w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors"
             >
-              Trigger Error Boundary
-            </button>
-            <button
-              onClick={() => {
-                window.location.href = "/this-page-does-not-exist";
-              }}
-              className="w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors cursor-pointer"
+              <span className="text-danger font-semibold">Error Boundary</span>
+              <span className="text-gray-400 text-xs block mt-0.5">Renders a component that throws</span>
+            </a>
+            <a
+              href="/this-page-does-not-exist"
+              className="block w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors"
             >
-              Trigger 404
-            </button>
-            <button
-              onClick={() => {
-                window.location.href = "/nonexistent-route";
-              }}
-              className="w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors cursor-pointer"
+              <span className="text-warning font-semibold">404 Not Found</span>
+              <span className="text-gray-400 text-xs block mt-0.5">Navigates to a missing page</span>
+            </a>
+            <a
+              href="/dev/global-error-test"
+              className="block w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors"
             >
-              Trigger Global Error
-            </button>
+              <span className="text-accent font-semibold">Global Error</span>
+              <span className="text-gray-400 text-xs block mt-0.5">Throws in root layout boundary</span>
+            </a>
           </div>
           <button
             onClick={() => setOpen(false)}
