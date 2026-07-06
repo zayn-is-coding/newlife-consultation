@@ -43,8 +43,8 @@ export default function DevErrorTester() {
               href="/dev/global-error-test"
               className="block w-full text-left px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg font-body text-sm transition-colors"
             >
-              <span className="text-accent font-semibold">Global Error</span>
-              <span className="text-gray-400 text-xs block mt-0.5">Throws in root layout boundary</span>
+              <span className="text-secondary font-semibold">Loading State</span>
+              <span className="text-gray-400 text-xs block mt-0.5">5 second delay with spinner</span>
             </a>
           </div>
           <button
